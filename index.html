@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍길동 CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="navbar">
+        <div class="navbar-left">
+            <h1 class="cv-owner-name" onclick="scrollToTop()"></h1>
+        </div>
+        <nav class="navbar-right">
+            <ul class="nav-menu">
+                <li><a href="#introduction" data-section="introduction"></a></li>
+                <li><a href="#education" data-section="education"></a></li>
+                <li><a href="#experience" data-section="experience"></a></li>
+                <li><a href="#projects" data-section="projects"></a></li>
+                <li><a href="#skills" data-section="skills"></a></li>
+                <li><a href="#research" data-section="research"></a></li>
+                <li><a href="#awards" data-section="awards"></a></li>
+            </ul>
+            <div class="lang-toggle">
+                <button id="lang-ko" class="lang-btn active" data-lang="ko">KOR</button>
+                <button id="lang-en" class="lang-btn" data-lang="en">ENG</button>
+            </div>
+        </nav>
+    </header>
 
+    <main id="main-content">
+        <aside id="summary-area">
+            <div class="profile-card">
+                <img id="profile-photo" src="" alt="Profile Photo" class="profile-photo">
+                <h2 id="profile-name"></h2>
+                <p id="profile-tagline" class="tagline"></p>
+            </div>
+
+            <div class="contact-info">
+                <h3></h3>
+                <p><img src="assets/icons/email.svg" alt="Email Icon" class="icon"> <span id="contact-email"></span></p>
+                <p><img src="assets/icons/phone.svg" alt="Phone Icon" class="icon"> <span id="contact-phone"></span></p>
+                <p><img src="assets/icons/location.svg" alt="Location Icon" class="icon"> <span id="contact-location"></span></p>
+            </div>
+
+            <div class="keywords">
+                <h3></h3>
+                <div id="keywords-list" class="tags-container"></div>
+            </div>
+
+            <div class="summary-awards">
+                <h3></h3>
+                <p id="summary-awards-text"></p>
+            </div>
+
+            <div class="external-links">
+                <h3></h3>
+                <div id="external-links-list" class="links-container"></div>
+            </div>
+
+            <button id="contact-cta" class="cta-button"></button>
+        </aside>
+
+        <section id="contents-area">
+            <section id="introduction" class="content-section">
+                <h2 class="section-title"><img src="assets/icons/intro.svg" alt="Intro Icon" class="title-icon"> <span data-section-title="introduction"></span></h2>
+                <div class="subsection">
+                    <h3></h3>
+                    <p id="intro-self-intro"></p>
+                </div>
+                <div class="subsection">
+                    <h3></h3>
+                    <p id="intro-goals"></p>
+                </div>
+            </section>
+
+            <section id="education" class="content-section">
+                <h2 class="section-title"><img src="assets/icons/education.svg" alt="Education Icon" class="title-icon"> <span data-section-title="education"></span></h2>
+                <div id="education-timeline" class="timeline"></div>
+            </section>
+
+            <section id="experience" class="content-section">
+                <h2 class="section-title"><img src="assets/icons/experience.svg" alt="Experience Icon" class="title-icon"> <span data-section-title="experience"></span></h2>
+                <div id="experience-list" class="card-list"></div>
+            </section>
+
+            <section id="projects" class="content-section">
+                <h2 class="section-title"><img src="assets/icons/projects.svg" alt="Projects Icon" class="title-icon"> <span data-section-title="projects"></span></h2>
+                <div id="projects-grid" class="projects-grid"></div>
+            </section>
+
+            <section id="skills" class="content-section">
+                <h2 class="section-title"><img src="assets/icons/skills.svg" alt="Skills Icon" class="title-icon"> <span data-section-title="skills"></span></h2>
+                <div id="skills-categories"></div>
+            </section>
+
+            <section id="research" class="content-section">
+                <h2 class="section-title"><img src="assets/icons/research.svg" alt="Research Icon" class="title-icon"> <span data-section-title="research"></span></h2>
+                <div id="research-list" class="list-items"></div>
+            </section>
+
+            <section id="awards" class="content-section">
+                <h2 class="section-title"><img src="assets/icons/awards.svg" alt="Awards Icon" class="title-icon"> <span data-section-title="awards"></span></h2>
+                <div id="awards-list" class="list-items"></div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer-text"></p>
+    </footer>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="contact-modal-title"></h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="contact-name"></label>
+                    <input type="text" id="contact-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email-input"></label>
+                    <input type="email" id="contact-email-input" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-phone-input"></label>
+                    <input type="tel" id="contact-phone-input" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="contact-message"></label>
+                    <textarea id="contact-message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" id="contact-submit-btn"></button>
+            </form>
+        </div>
+    </div>
+
+    <div id="project-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="project-detail-title"></h2>
+            <img id="project-detail-image" src="" alt="Project Image">
+            <p><strong id="project-detail-period-label"></strong>: <span id="project-detail-period"></span></p>
+            <p><strong id="project-detail-tech-label"></strong>: <span id="project-detail-technologies"></span></p>
+            <p id="project-detail-description"></p>
+            <a id="project-detail-link" href="#" target="_blank" rel="noopener noreferrer" class="button"></a>
+        </div>
+    </div>
+
+    <script src="data/cv_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
