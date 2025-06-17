@@ -1,1 +1,814 @@
+/* Noto Sans KR 폰트 정의 (Google Fonts를 통해 로드됨) */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding-top: 60px; /* NavBar 높이만큼 여백 추가 */
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
 
+/* --- 공통 스타일 --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+    filter: invert(20%) sepia(80%) saturate(1300%) hue-rotate(190deg) brightness(90%) contrast(90%); /* 파란 계열로 변경 */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+}
+
+/* --- NavBar --- */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #34495e; /* 파란 계열 어두운 배경 */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.navbar-left .cv-owner-name {
+    margin: 0;
+    font-size: 1.8em;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 25px;
+}
+
+.nav-menu a {
+    color: white;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.lang-toggle {
+    margin-left: 30px;
+}
+
+.lang-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.lang-btn.active {
+    background-color: white;
+    color: #34495e;
+}
+
+/* --- Main Content Layout --- */
+#main-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure rounded corners on content */
+}
+
+#summary-area {
+    flex: 3; /* 30% width on desktop */
+    background-color: #ecf0f1; /* 밝은 회색 계열 배경 */
+    padding: 30px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd; /* 경계선 */
+}
+
+#contents-area {
+    flex: 7; /* 70% width on desktop */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* --- Summary Area Sections --- */
+.profile-card {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3498db;
+    margin-bottom: 15px;
+}
+
+.profile-card h2 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.profile-card .tagline {
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+.contact-info, .keywords, .summary-awards, .external-links {
+    margin-bottom: 30px;
+}
+
+.contact-info h3, .keywords h3, .summary-awards h3, .external-links h3 {
+    color: #3498db; /* 섹션 타이틀 강조 */
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags-container span {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.summary-awards p {
+    font-size: 1em;
+    color: #555;
+}
+
+.links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* 아이콘 중앙 정렬 */
+}
+
+.links-container a {
+    display: flex;
+    flex-direction: column; /* 아이콘과 텍스트 수직 정렬 */
+    align-items: center;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.links-container a .icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+    filter: invert(30%) sepia(80%) saturate(1300%) hue-rotate(190deg) brightness(80%) contrast(80%);
+}
+
+.links-container a:hover .icon {
+    filter: invert(20%) sepia(80%) saturate(1300%) hue-rotate(190deg) brightness(70%) contrast(70%);
+}
+
+.cta-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #2ecc71; /* 녹색 계열 강조 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #27ae60;
+}
+
+/* --- Contents Area Sections --- */
+.content-section {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.content-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #34495e;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #3498db; /* 강조 라인 */
+    padding-bottom: 10px;
+}
+
+.section-title .title-icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+    filter: invert(20%) sepia(80%) saturate(1300%) hue-rotate(190deg) brightness(90%) contrast(90%);
+}
+
+.subsection {
+    margin-bottom: 25px;
+}
+
+.subsection h3 {
+    font-size: 1.3em;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+/* Education Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0 20px 30px;
+    margin-left: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #3498db;
+    border-radius: 50%;
+    left: -6px;
+    top: 5px;
+    border: 2px solid white;
+    z-index: 1;
+}
+
+.timeline-item h4 {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.timeline-item .period {
+    font-style: italic;
+    color: #888;
+}
+
+/* Experience Card List */
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.experience-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+.experience-card h3 {
+    font-size: 1.5em;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.experience-card .company {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.experience-card .period {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.experience-card ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.experience-card ul li {
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.experience-card .projects-info {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.project-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-card h3 {
+    font-size: 1.3em;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.project-card .description {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1; /* 내용을 채우도록 */
+}
+
+.project-card .technologies {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.project-card .period {
+    font-size: 0.85em;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* Skills */
+.skills-category {
+    margin-bottom: 30px;
+}
+
+.skills-category h4 {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    width: 120px; /* 스킬 이름 고정 폭 */
+    font-weight: 500;
+    color: #444;
+}
+
+.skill-level-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.skill-level-fill {
+    height: 100%;
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+/* Research & Awards Lists */
+.list-items {
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.list-item h4 {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.list-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.list-item .date {
+    font-style: italic;
+    color: #888;
+    margin-top: 5px;
+}
+
+.list-item .link-button {
+    margin-top: 15px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #34495e; /* NavBar와 동일한 배경색 */
+    color: white;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* --- Modals --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be responsive */
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h2 {
+    color: #3498db;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Contact Form Specifics */
+#contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+#contact-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Project Detail Modal Specifics */
+#project-detail-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#project-detail-title {
+    text-align: center;
+}
+
+#project-detail-modal p {
+    font-size: 1.05em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+#project-detail-modal strong {
+    color: #2c3e50;
+}
+
+#project-detail-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    text-decoration: none;
+}
+
+
+/* --- 반응형 디자인 (Media Queries) --- */
+
+/* 모바일 (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px; /* 모바일 NavBar 높이 고려 */
+    }
+
+    #navbar {
+        padding: 8px 15px;
+    }
+
+    .navbar-left .cv-owner-name {
+        font-size: 1.5em;
+    }
+
+    .nav-menu {
+        display: none; /* 모바일에서는 메뉴 숨김 */
+    }
+
+    .navbar-right {
+        margin-left: auto; /* 언어 토글 오른쪽 정렬 */
+    }
+
+    #main-content {
+        flex-direction: column; /* 세로로 스택 */
+        margin: 15px auto;
+        padding: 0;
+    }
+
+    #summary-area {
+        width: 100%; /* 전체 너비 */
+        border-right: none;
+        border-bottom: 1px solid #ddd; /* 하단 경계선 */
+        padding: 20px;
+    }
+
+    #contents-area {
+        width: 100%; /* 전체 너비 */
+        padding: 20px;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-card h2 {
+        font-size: 1.8em;
+    }
+
+    .content-section {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+
+    .section-title .title-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* 모바일에서는 1열 */
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* 태블릿 (769px ~ 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-menu li {
+        margin-left: 15px;
+    }
+
+    #main-content {
+        margin: 25px auto;
+    }
+
+    #summary-area {
+        padding: 25px;
+    }
+
+    #contents-area {
+        padding: 25px;
+    }
+
+    .profile-photo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 태블릿에서는 2열 */
+    }
+}
